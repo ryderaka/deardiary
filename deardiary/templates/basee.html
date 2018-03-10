@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Zembed- ThoughtChimp</title>
+         <link type="text/css" rel="stylesheet" href="{% static "css/styles.css" %}" />
+    </head>
+
+    <body>
+        <div class = "header">
+
+            <div id="bar1">
+                <a href="/index/">
+                    Home
+                </a>
+            </div>
+
+                {% if username %}
+                    <div id="bar4">
+                        <a href="/logout/">
+                            Logout
+                        </a>
+                    </div>
+
+                    <div id="bar5">
+                        <a href="/dashboard/">
+                            Dashboard
+                        </a>
+                    </div>
+
+
+                {% else %}
+
+
+                    <div id="bar2">
+                        <a href="/login/">
+                            Login
+                        </a>
+                    </div>
+
+                    <div id="bar3">
+                        <a href="/registration/">
+                            Registration
+                        </a>
+                    </div>
+
+                {% endif %}
+
+            </div>
+
+            <div class="logo">
+                <img src="{% static "images/tc.jpg" %} " height=100' width='100' >
+            </div>
+
+        </div>
+
+
+    {% block content %}{% endblock %}
+
+    </body>
+</html>
