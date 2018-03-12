@@ -1,0 +1,5 @@
+.idea/*
+*.pot
+*.py[co]
+/.env
+__pycache__
