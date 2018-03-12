@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.contrib.auth import authenticate, logout, update_session_auth_hash, login
 from django.contrib.auth.models import User, Group
+from django.contrib.auth.decorators import login_required
 
 
 # redirects to homepage
@@ -69,6 +70,7 @@ def user_login(request):
         })
 
 
+@login_required(login_url='/login/')
 def dashboard(request):
     username = request.session.get('username')
     return render(request, 'user_dashboard.html',
